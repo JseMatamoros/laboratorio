@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Insertar Laboratorio</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+    
+    <form class="form-box" method="post" action="{% url 'insertar_laboratorio' %}">
+        <h1>Ingresar los datos del laboratorio</h1>
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" name="ciudad" required><br>
+        <label for="pais">País:</label>
+        <input type="text" name="pais" required><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <a href="{% url 'mostrar_laboratorios' %}">&lt;&lt; Ir a información de los laboratorios</a>
+
+</body>
+
+</html>
